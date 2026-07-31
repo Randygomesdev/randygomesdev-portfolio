@@ -1,0 +1,74 @@
+<section id="about-me" class="py-12">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-stretch">
+    
+    <!-- Photo Column -->
+    <div class="md:col-span-5 flex items-center justify-center">
+      <div class="relative group w-full max-w-[320px] md:max-w-sm">
+        <!-- Ambient subtle glow behind photo -->
+        <div class="absolute -inset-1.5 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500"></div>
+        
+        <!-- Image wrapper -->
+        <div class="relative w-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-xl">
+          <img 
+            src="profile.png" 
+            alt="Foto de Perfil de Randy Gomes" 
+            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Column -->
+    <div class="md:col-span-7 flex flex-col md:py-2">
+      <!-- Heading block at the top -->
+      <div>
+        <h2 class="text-2xl font-bold text-zinc-100 tracking-tight">Quem Sou Eu</h2>
+        <p class="text-zinc-400 text-sm mt-1">Um pouco da minha trajetória profissional e tecnológica.</p>
+      </div>
+
+      <!-- Paragraphs centered in the remaining space -->
+      <div class="flex-grow flex flex-col justify-center space-y-4 text-zinc-400 text-sm sm:text-base leading-relaxed py-6 md:py-0">
+        <p>
+          Engenheiro de Software focado na criação de soluções de ponta a ponta utilizando <strong class="text-emerald-400 font-medium">Java (Spring Boot), Angular e Docker</strong>. Unifico a engenharia de código limpo (SOLID, DDD, Microserviços) à maturidade de mais de 10 anos em gestão operacional e visão de processos.
+        </p>
+        
+        <p>
+          Entre os projetos que venho desenvolvendo, destaco o <a href="#projetos" class="text-emerald-400 hover:text-emerald-300 font-medium underline decoration-emerald-500/30 decoration-2 underline-offset-4 transition-colors">EasyPet</a>, uma plataforma Marketplace que conecta tutores de pets a uma rede completa de prestadores de serviços parceiros, como clínicas veterinárias, petshops, banho & tosa e cuidadores; e o <a href="#projetos" class="text-emerald-400 hover:text-emerald-300 font-medium underline decoration-emerald-500/30 decoration-2 underline-offset-4 transition-colors">Setoriza</a>, um CRM para automação de atendimento & chat multiatendente via WhatsApp.
+        </p>
+      </div>
+
+      <!-- Action Buttons (Aligned to the base of the photo on desktop) -->
+      <div class="flex flex-wrap gap-4 items-center justify-end pt-4 md:pt-0">
+        <!-- LinkedIn Button -->
+        <a 
+          href="https://www.linkedin.com/in/randygomesdev/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-zinc-950 hover:text-zinc-900 text-sm font-semibold transition-all shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect width="4" height="12" x="2" y="9" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          <span>Conectar no LinkedIn</span>
+        </a>
+
+        <!-- Download CV Button -->
+        <a 
+          href="/cv.pdf" 
+          download="Curriculo_Randy_Gomes.pdf"
+          class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900/30 hover:bg-zinc-900/60 border border-zinc-800/60 hover:border-zinc-700/80 text-zinc-300 hover:text-zinc-100 text-sm font-medium transition-all"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-400">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" x2="12" y1="15" y2="3" />
+          </svg>
+          <span>Baixar CV</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
