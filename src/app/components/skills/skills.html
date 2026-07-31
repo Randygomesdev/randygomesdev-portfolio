@@ -1,0 +1,24 @@
+<section id="skills" class="py-12 space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold text-zinc-100 tracking-tight">Minha Stack</h2>
+        <p class="text-zinc-400 text-sm mt-1">Tecnologias que utilizo no dia a dia para construir produtos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        @for (skillGroup of portfolioService.skills(); track skillGroup.category) {
+          <div class="p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/60 space-y-3">
+            <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider">
+              {{ skillGroup.category }}
+            </h3>
+            <ul class="space-y-2">
+              @for (item of skillGroup.items; track item) {
+                <li class="text-sm text-zinc-300 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-600"></span>
+                  {{ item }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </section>

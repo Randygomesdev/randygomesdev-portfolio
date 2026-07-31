@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #09090b;
+  --color-brand-card: #18181b;
+  --color-brand-border: #27272a;
+  --color-brand-accent: #10b981;
+}
+
+@source "./app";
+@source "./app/**/*.{html,ts}";
+
+html {
+  scroll-behavior: smooth; 
+  overflow-x: clip;
+}
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: clip;
+}
