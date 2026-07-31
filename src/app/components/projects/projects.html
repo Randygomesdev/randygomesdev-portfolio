@@ -1,0 +1,57 @@
+<section id="projetos" class="pt-6 pb-12 space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold text-zinc-100 tracking-tight">Projetos em Destaque</h2>
+        <p class="text-zinc-400 text-sm mt-1">Seleção de aplicações e soluções que desenvolvi recentemente.</p>
+      </div>
+
+      <!-- Exemplo do uso de @defer do Angular para carregar e performar a grid -->
+      @defer (on viewport) {
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          @for (project of portfolioService.projects(); track project.id) {
+            <article class="group relative p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                    {{ project.title }}
+                  </h3>
+                  @if (project.liveUrl) {
+                    <a [href]="project.liveUrl" target="_blank" class="text-zinc-500 hover:text-zinc-200 transition-colors text-sm">
+                      Live ↗
+                    </a>
+                  }
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                  {{ project.description }}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-2 pt-2">
+                @for (tag of project.tags; track tag) {
+                  <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-zinc-800/60 text-zinc-300 border border-zinc-800">
+                    {{ tag }}
+                  </span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      } @placeholder {
+        <div class="h-48 rounded-xl bg-zinc-900 animate-pulse"></div>
+      }
+
+      <!-- Link to see more projects on GitHub -->
+      <div class="flex justify-center pt-6">
+        <a 
+          href="https://github.com/randygomesdev" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-zinc-900/30 hover:bg-zinc-900/60 border border-zinc-800/60 hover:border-zinc-700/80 text-zinc-300 hover:text-zinc-100 text-sm font-medium transition-all shadow-md hover:shadow-lg"
+        >
+          <span>Ver todos os projetos no GitHub</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-400">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+        </a>
+      </div>
+    </section>
