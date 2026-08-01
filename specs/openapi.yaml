@@ -1,0 +1,363 @@
+openapi: 3.0.3
+info:
+  title: Portfolio CMS API
+  description: API para gerenciar o conteúdo dinâmico (projetos, habilidades e seções customizadas) do portfólio.
+  version: 1.0.0
+servers:
+  - url: /api
+    description: Servidor principal (roteado via proxy reverso Caddy/Nginx)
+paths:
+  /auth/login:
+    post:
+      summary: Autenticar administrador
+      description: Realiza o login do usuário administrador e retorna um token JWT.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Autenticação bem-sucedida. Retorna o token JWT.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Credenciais inválidas.
+
+  /projects:
+    get:
+      summary: Listar todos os projetos
+      description: Retorna todos os projetos cadastrados (público).
+      responses:
+        '200':
+          description: Lista de projetos.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+    post:
+      summary: Criar novo projeto
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectInput'
+      responses:
+        '201':
+          description: Projeto criado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '401':
+          description: Não autorizado (token ausente ou inválido).
+
+  /projects/{id}:
+    put:
+      summary: Atualizar um projeto existente
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectInput'
+      responses:
+        '200':
+          description: Projeto atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '404':
+          description: Projeto não encontrado.
+        '401':
+          description: Não autorizado.
+    delete:
+      summary: Deletar um projeto
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Projeto deletado com sucesso.
+        '404':
+          description: Projeto não encontrado.
+        '401':
+          description: Não autorizado.
+
+  /skills:
+    get:
+      summary: Listar grupos de habilidades
+      description: Retorna as habilidades separadas por categorias.
+      responses:
+        '200':
+          description: Lista de grupos de habilidades.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SkillGroup'
+    post:
+      summary: Salvar ou atualizar a lista completa de habilidades
+      description: Substitui ou atualiza a lista de habilidades por categoria.
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SkillGroupInput'
+      responses:
+        '200':
+          description: Habilidades salvas com sucesso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SkillGroup'
+        '401':
+          description: Não autorizado.
+
+  /sections:
+    get:
+      summary: Listar seções personalizadas
+      description: Retorna as seções dinâmicas ativas do site em ordem de exibição.
+      responses:
+        '200':
+          description: Lista de seções.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Section'
+    post:
+      summary: Criar nova seção
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SectionInput'
+      responses:
+        '201':
+          description: Seção criada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Section'
+        '401':
+          description: Não autorizado.
+
+  /sections/{id}:
+    put:
+      summary: Atualizar uma seção existente
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SectionInput'
+      responses:
+        '200':
+          description: Seção atualizada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Section'
+        '404':
+          description: Seção não encontrada.
+        '401':
+          description: Não autorizado.
+    delete:
+      summary: Deletar uma seção
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Seção deletada com sucesso.
+        '404':
+          description: Seção não encontrada.
+        '401':
+          description: Não autorizado.
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: OBJECT
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    LoginResponse:
+      type: OBJECT
+      properties:
+        token:
+          type: string
+        tokenType:
+          type: string
+          default: Bearer
+
+    Project:
+      type: OBJECT
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        longDescription:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        githubUrl:
+          type: string
+        liveUrl:
+          type: string
+        demoIframeUrl:
+          type: string
+        featured:
+          type: boolean
+
+    ProjectInput:
+      type: OBJECT
+      required:
+        - title
+        - description
+        - tags
+        - featured
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        longDescription:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        githubUrl:
+          type: string
+        liveUrl:
+          type: string
+        demoIframeUrl:
+          type: string
+        featured:
+          type: boolean
+
+    SkillGroup:
+      type: OBJECT
+      properties:
+        id:
+          type: string
+        category:
+          type: string
+        items:
+          type: array
+          items:
+            type: string
+
+    SkillGroupInput:
+      type: OBJECT
+      required:
+        - category
+        - items
+      properties:
+        category:
+          type: string
+        items:
+          type: array
+          items:
+            type: string
+
+    Section:
+      type: OBJECT
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        slug:
+          type: string
+        content:
+          type: string
+          description: Conteúdo da seção em formato Markdown ou HTML
+        sortOrder:
+          type: integer
+        active:
+          type: boolean
+
+    SectionInput:
+      type: OBJECT
+      required:
+        - title
+        - slug
+        - content
+        - sortOrder
+        - active
+      properties:
+        title:
+          type: string
+        slug:
+          type: string
+        content:
+          type: string
+        sortOrder:
+          type: integer
+        active:
+          type: boolean
