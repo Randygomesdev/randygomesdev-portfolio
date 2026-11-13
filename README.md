@@ -36,7 +36,7 @@ O projeto foi construído utilizando as tecnologias mais modernas do ecossistema
 ## 💻 Como Executar Localmente
 
 ### Pré-requisitos
-Certifique-se de ter o **Node.js** instalado (versão recomendada: >= 20.x).
+Certifique-se de ter o **Node.js** instalado (22.12 ou superior compatível com Angular 21).
 
 1. Clone o repositório:
    ```bash

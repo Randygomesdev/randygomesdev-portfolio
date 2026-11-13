@@ -10,19 +10,26 @@ export class PortfolioService {
     {
       id: '1',
       title: 'EasyPet',
-      description: 'Plataforma Marketplace que conecta tutores de pets a uma rede completa de prestadores de serviços parceiros, como clínicas veterinárias, petshops, banho & tosa e cuidadores.',
-      tags: ['React', 'Vite', 'TailwindCSS', 'Java 21', 'Spring Boot', 'Docker'],
+      description: 'Plataforma de cuidados pet que conecta tutores a clínicas, petshops e outros parceiros. Reúne agendamento online, prontuário dos pets e gestão dos estabelecimentos, com uma demonstração pública navegável.',
+      tags: ['React 19', 'Vite', 'Tailwind CSS', 'Java 21', 'Spring Boot', 'PostgreSQL', 'Docker'],
       githubUrl: 'https://github.com/Randygomesdev/Easypet',
-      liveUrl: 'https://randygomesdev.dev/easypet',
+      liveUrl: 'https://www.innker.com.br/easypet',
       featured: true
     },
     {
       id: '2',
       title: 'Setoriza',
-      description: 'CRM Automação de atendimento & Chat Multiatendente via WhatApp. Projeto Fullstack em Java (Microserviços) e React (Vite) rodando em Docker',
-      tags: ['React', 'Vite', 'TailwindCSS', 'Java 21', 'Spring Boot', 'Docker'],
-      githubUrl: 'https://github.com/Randygomesdev/Setoriza',
-      liveUrl: 'https://randygomesdev.dev/Setoriza',
+      description: 'SaaS em produção para gestão de operações e atendimento integrado ao WhatsApp, com clientes de assinatura recorrente. Centraliza conversas, setores e automações em uma arquitetura de microsserviços. A versão atual utiliza Angular e NestJS.',
+      tags: ['Angular 21', 'TypeScript', 'NestJS', 'Node.js', 'PostgreSQL', 'RabbitMQ', 'Docker'],
+      liveUrl: 'https://setoriza.online',
+      featured: true
+    },
+    {
+      id: '3',
+      title: 'Innker Tecnologia',
+      description: 'Site institucional da Innker, com apresentação de serviços e produtos, demonstração do Easypet e manual de identidade visual. Interface responsiva com rotas carregadas sob demanda e identidade visual consistente.',
+      tags: ['Angular 21', 'TypeScript', 'Tailwind CSS', 'RxJS', 'Vercel'],
+      liveUrl: 'https://www.innker.com.br',
       featured: true
     }
   ])
@@ -30,15 +37,15 @@ export class PortfolioService {
   readonly skills = signal<Skill[]>([
     {
       category: 'Frontend & UI',
-      items: ['Angular', 'React', 'TypeScript', 'Tailwind CSS', 'RxJS', 'HTML5/CSS3']
+      items: ['Angular 21', 'React 19 / Vite', 'TypeScript / JavaScript', 'Tailwind CSS / daisyUI', 'RxJS', 'HTML5 / CSS3']
     },
     {
       category: 'Backend & APIs',
-      items: ['Java', 'Spring Boot', 'REST APIs', 'Microserviços', 'PostgreSQL']
+      items: ['Node.js / NestJS', 'Java / Spring Boot', 'APIs REST / WebSocket', 'Microsserviços', 'PostgreSQL / MySQL', 'Redis / RabbitMQ']
     },
     {
       category: 'DevOps & Ferramentas',
-      items: ['Git', 'Docker', 'CI/CD Pipelines']
+      items: ['Git / GitHub', 'Docker / Docker Compose', 'GitHub Actions / CI/CD', 'Vercel', 'Vitest / Playwright', 'Postman']
     }
   ])
 }
