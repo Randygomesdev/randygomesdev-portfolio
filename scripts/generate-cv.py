@@ -8,7 +8,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'output/pdf/Curriculo_Randy_Gomes.pdf'
+OUT = ROOT / 'output/pdf/Curriculo_Randy_Gomes_dev.pdf'
 OUT.parent.mkdir(parents=True, exist_ok=True)
 styles = {
     'name': ParagraphStyle('name', fontName='Helvetica-Bold', fontSize=22, leading=26, textColor=colors.HexColor('#153f38'), spaceAfter=4),
@@ -26,16 +26,16 @@ p('DESENVOLVEDOR FULL STACK | Angular · React · NestJS · Spring Boot', 'subti
 p('Florianópolis, SC · (48) 99836-0776 · <link href="mailto:contato@innker.com.br">contato@innker.com.br</link>')
 p('<link href="https://randygomes.dev.br">randygomes.dev.br</link> · <link href="https://linkedin.com/in/randygomesdev">linkedin.com/in/randygomesdev</link> · <link href="https://github.com/randygomesdev">github.com/randygomesdev</link>')
 p('RESUMO PROFISSIONAL', 'section')
-p('Estudante de Engenharia de Software com atuação em desenvolvimento Full Stack, de interfaces responsivas a APIs e microsserviços. Desenvolvo produtos com Angular, React, NestJS e Spring Boot, incluindo o Setoriza, SaaS em produção com clientes de assinatura recorrente. Mais de 10 anos de experiência em gestão e administração de negócios, com visão de produto, análise de processos e resolução de problemas.')
+p('Desenvolvedor Full Stack na Innker Tecnologia e estudante de Engenharia de Software. Aplico mais de dez anos de experiência em gestão de operações ao desenvolvimento de produtos web, da análise de processos à entrega em produção.')
 p('STACK TÉCNICA', 'section')
 p('<b>Frontend:</b> Angular 21, React 19, TypeScript, JavaScript, RxJS, Vite, HTML, CSS, Tailwind CSS e daisyUI.<br/><b>Backend e dados:</b> Node.js, NestJS, Java, Spring Boot, APIs REST, WebSocket, microsserviços, PostgreSQL, MySQL, Redis e RabbitMQ.<br/><b>Entrega e qualidade:</b> Git, GitHub, Docker, Docker Compose, GitHub Actions, CI/CD, Vercel, Postman, Vitest e Playwright.')
 p('PROJETOS', 'section')
 p('Setoriza | SaaS de gestão de operações e atendimento via WhatsApp', 'item')
-p('Produto Full Stack em produção, com assinaturas recorrentes e código atual privado. Centraliza atendimento, setores e automações. Evolução da versão inicial em Java e React para Angular 21 e NestJS, com PostgreSQL, RabbitMQ e Docker. <link href="https://setoriza.online">setoriza.online</link>')
+p('Começou como projeto de portfólio e evoluiu para um SaaS em produção com clientes de assinatura recorrente. Equipes compartilham a caixa de entrada do WhatsApp, encaminham conversas por setor e automatizam a triagem. Angular 21, NestJS, PostgreSQL e RabbitMQ. <link href="https://setoriza.online">setoriza.online</link>')
 p('Easypet | Plataforma de cuidados pet', 'item')
-p('Projeto de estudo com React 19, Vite, Tailwind CSS e microsserviços em Java 21 / Spring Boot. Conecta tutores e parceiros com agendamento, prontuários e gestão dos estabelecimentos. PostgreSQL, Redis e Docker na infraestrutura. Demonstração: <link href="https://easypet.innker.com.br/">easypet.innker.com.br</link>')
+p('Tutores agendam serviços online e acompanham registros de saúde dos pets. Clínicas e pet shops gerenciam horários, profissionais e atendimentos. React 19, Vite, Java 21 e Spring Boot. <link href="https://easypet.innker.com.br/">easypet.innker.com.br</link>')
 p('Innker Tecnologia | Site institucional', 'item')
-p('Desenvolvimento do site com Angular 21, TypeScript e Tailwind CSS, publicado na Vercel. Apresentação de serviços e produtos, demonstração do Easypet e manual de identidade visual, com interface responsiva e carregamento de rotas sob demanda. <link href="https://www.innker.com.br">innker.com.br</link>')
+p('Site da software house para apresentar serviços e produtos e facilitar o contato. Inclui uma demonstração navegável do Easypet e um guia digital de identidade visual com exemplos de cores, tipografia e componentes. Angular 21, Tailwind CSS e Vercel. <link href="https://www.innker.com.br">innker.com.br</link>')
 p('EXPERIÊNCIA PROFISSIONAL', 'section')
 p('Juiz de Fora - Segurança | Auxiliar Administrativo | Mar. 2023 - Mai. 2026', 'item')
 p('Florianópolis, SC. Identificação de gargalos no fluxo logístico de mais de 230 funcionários entre aeroportos e matriz. Estruturação das regras de negócio e orquestração, com apoio de IA, de uma solução para leitura de relatórios de ponto e notificações de pendências via WhatsApp, reduzindo trabalho manual.')
