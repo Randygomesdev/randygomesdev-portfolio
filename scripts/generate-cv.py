@@ -13,7 +13,7 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 styles = {
     'name': ParagraphStyle('name', fontName='Helvetica-Bold', fontSize=22, leading=26, textColor=colors.HexColor('#153f38'), spaceAfter=4),
     'subtitle': ParagraphStyle('subtitle', fontName='Helvetica-Bold', fontSize=10, leading=14, spaceAfter=5),
-    'body': ParagraphStyle('body', fontName='Helvetica', fontSize=9, leading=12, spaceAfter=4),
+    'body': ParagraphStyle('body', fontName='Helvetica', fontSize=10, leading=13.5, spaceAfter=5),
     'section': ParagraphStyle('section', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=colors.HexColor('#153f38'), spaceBefore=9, spaceAfter=5),
     'item': ParagraphStyle('item', fontName='Helvetica-Bold', fontSize=9, leading=12, spaceBefore=3, spaceAfter=3),
 }
@@ -26,17 +26,19 @@ p('DESENVOLVEDOR FULL STACK | Angular · React · NestJS · Spring Boot', 'subti
 p('Florianópolis, SC · (48) 99836-0776 · <link href="mailto:contato@innker.com.br">contato@innker.com.br</link>')
 p('<link href="https://randygomes.dev.br">randygomes.dev.br</link> · <link href="https://linkedin.com/in/randygomesdev">linkedin.com/in/randygomesdev</link> · <link href="https://github.com/randygomesdev">github.com/randygomesdev</link>')
 p('RESUMO PROFISSIONAL', 'section')
-p('Desenvolvedor Full Stack na Innker Tecnologia e estudante de Engenharia de Software. Aplico mais de dez anos de experiência em gestão de operações ao desenvolvimento de produtos web, da análise de processos à entrega em produção.')
+p('Desenvolvedor Full Stack com experiência na evolução de um SaaS em produção com clientes recorrentes. Construo interfaces, APIs e integrações e aplico mais de dez anos de experiência em gestão de operações para transformar processos de atendimento em fluxos de software.')
 p('STACK TÉCNICA', 'section')
 p('<b>Frontend:</b> Angular 21, React 19, TypeScript, JavaScript, RxJS, Vite, HTML, CSS, Tailwind CSS e daisyUI.<br/><b>Backend e dados:</b> Node.js, NestJS, Java, Spring Boot, APIs REST, WebSocket, microsserviços, PostgreSQL, MySQL, Redis e RabbitMQ.<br/><b>Entrega e qualidade:</b> Git, GitHub, Docker, Docker Compose, GitHub Actions, CI/CD, Vercel, Postman, Vitest e Playwright.')
-p('PROJETOS', 'section')
+p('EXPERIÊNCIA EM DESENVOLVIMENTO', 'section')
+p('Innker Tecnologia | Desenvolvedor Full Stack', 'item')
+p('Desenvolvo e mantenho produtos web, da definição das regras de negócio à entrega em produção. Trabalho com interfaces em Angular e React, APIs em NestJS e Spring Boot e integrações com serviços externos.')
 p('Setoriza | SaaS de gestão de operações e atendimento via WhatsApp', 'item')
-p('Começou como projeto de portfólio e evoluiu para um SaaS em produção com clientes de assinatura recorrente. Equipes compartilham a caixa de entrada do WhatsApp, encaminham conversas por setor e automatizam a triagem. Angular 21, NestJS, PostgreSQL e RabbitMQ. <link href="https://setoriza.online">setoriza.online</link>')
+p('Evoluí o Setoriza de um projeto de portfólio em Java e React para um SaaS em produção com Angular 21 e NestJS, usado por clientes de assinatura recorrente. Atuo em recursos como caixa de entrada compartilhada, distribuição de conversas por setor e triagem automatizada, conciliando novas entregas com a estabilidade do atendimento. <link href="https://setoriza.online">setoriza.online</link>')
 p('Easypet | Plataforma de cuidados pet', 'item')
-p('Tutores agendam serviços online e acompanham registros de saúde dos pets. Clínicas e pet shops gerenciam horários, profissionais e atendimentos. React 19, Vite, Java 21 e Spring Boot. <link href="https://easypet.innker.com.br/">easypet.innker.com.br</link>')
+p('Desenvolvo fluxos de agendamento online e acompanhamento da saúde dos pets para tutores e um painel para clínicas e pet shops gerenciarem horários, profissionais e atendimentos. A aplicação usa React 19, Vite e APIs em Java 21 com Spring Boot. <link href="https://easypet.innker.com.br/">easypet.innker.com.br</link>')
 p('Innker Tecnologia | Site institucional', 'item')
 p('Site da software house para apresentar serviços e produtos e facilitar o contato. Inclui uma demonstração navegável do Easypet e um guia digital de identidade visual com exemplos de cores, tipografia e componentes. Angular 21, Tailwind CSS e Vercel. <link href="https://www.innker.com.br">innker.com.br</link>')
-p('EXPERIÊNCIA PROFISSIONAL', 'section')
+p('EXPERIÊNCIA ANTERIOR', 'section')
 p('Juiz de Fora - Segurança | Auxiliar Administrativo | Mar. 2023 - Mai. 2026', 'item')
 p('Florianópolis, SC. Identificação de gargalos no fluxo logístico de mais de 230 funcionários entre aeroportos e matriz. Estruturação das regras de negócio e orquestração, com apoio de IA, de uma solução para leitura de relatórios de ponto e notificações de pendências via WhatsApp, reduzindo trabalho manual.')
 p('Isso é Massa Delivery | Cofundador e Gestor de Operações | Jul. 2018 - Fev. 2023', 'item')
