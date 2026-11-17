@@ -13,7 +13,7 @@ export class PortfolioService {
       description: 'Plataforma de cuidados pet que conecta tutores a clínicas, petshops e outros parceiros. Reúne agendamento online, prontuário dos pets e gestão dos estabelecimentos, com uma demonstração pública navegável.',
       tags: ['React 19', 'Vite', 'Tailwind CSS', 'Java 21', 'Spring Boot', 'PostgreSQL', 'Docker'],
       githubUrl: 'https://github.com/Randygomesdev/Easypet',
-      liveUrl: 'https://www.innker.com.br/easypet',
+      liveUrl: 'https://easypet.innker.com.br/',
       featured: true
     },
     {
