@@ -26,7 +26,7 @@ p('DESENVOLVEDOR FULL STACK | Angular · React · NestJS · Spring Boot', 'subti
 p('Florianópolis, SC · (48) 99836-0776 · <link href="mailto:contato@innker.com.br">contato@innker.com.br</link>')
 p('<link href="https://randygomes.dev.br">randygomes.dev.br</link> · <link href="https://linkedin.com/in/randygomesdev">linkedin.com/in/randygomesdev</link> · <link href="https://github.com/randygomesdev">github.com/randygomesdev</link>')
 p('RESUMO PROFISSIONAL', 'section')
-p('Desenvolvedor Full Stack com experiência na evolução de um SaaS em produção com clientes recorrentes. Construo interfaces, APIs e integrações e aplico mais de dez anos de experiência em gestão de operações para transformar processos de atendimento em fluxos de software.')
+p('Sou desenvolvedor Full Stack e estudante de Engenharia de Software. Mais de dez anos em gestão de operações me ensinaram a observar como as equipes trabalham e identificar tarefas que podem ser automatizadas. Aplico essa experiência no Setoriza, que evoluiu de projeto de portfólio para um SaaS em produção com clientes recorrentes, e no Easypet, que cresceu para reunir agendamento, prontuários e gestão de parceiros.')
 p('STACK TÉCNICA', 'section')
 p('<b>Frontend:</b> Angular 21, React 19, TypeScript, JavaScript, RxJS, Vite, HTML, CSS, Tailwind CSS e daisyUI.<br/><b>Backend e dados:</b> Node.js, NestJS, Java, Spring Boot, APIs REST, WebSocket, microsserviços, PostgreSQL, MySQL, Redis e RabbitMQ.<br/><b>Entrega e qualidade:</b> Git, GitHub, Docker, Docker Compose, GitHub Actions, CI/CD, Vercel, Postman, Vitest e Playwright.')
 p('EXPERIÊNCIA EM DESENVOLVIMENTO', 'section')
